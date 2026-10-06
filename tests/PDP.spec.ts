@@ -134,11 +134,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand condition report accordion and the condition form is available', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Car category with a condition report
         await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+
+        // Accept Cookies & Close Dialog popup
+        await AcceptCookie(page);
 
         //click on the condition report accordion to expand it'
         await page.getByRole('tab', { name: 'Kuntoraportti' }).click();
@@ -155,11 +155,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand car information accordion and the content is visible', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Car category with a technical information
         await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+
+        // Accept Cookies & Close Dialog popup
+        await AcceptCookie(page);
 
         //click on the technical information accordion to expand it'
         await expect(page.getByRole('tab', { name: 'Auton tiedot' })).toBeVisible();
@@ -175,11 +175,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand equipment accordion and the content is visible', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Car category with a basic information
         await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+
+        // Accept Cookies & Close Dialog popup
+        await AcceptCookie(page);
 
         //click on the basic information accordion to expand it'
         await page.getByRole('tab', { name: 'Varusteet' }).click();
