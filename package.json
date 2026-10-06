@@ -1,0 +1,15 @@
+{
+  "name": "saka-prod",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "dusan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "playwright": "^1.63.0"
+  }
+}
