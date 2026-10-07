@@ -10,7 +10,7 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://saka.fi/en');
+        await page.goto('https://saka.fi/fi');
 
         //await AcceptCookie(page);
     });
