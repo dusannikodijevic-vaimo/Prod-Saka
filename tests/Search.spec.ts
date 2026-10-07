@@ -14,12 +14,12 @@ import { VerifyPDP } from '../Fixture/VerifyPDP.fixture';
 test.describe('Search Smoke test cases', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('https://saka.fi/fi');
+
+        await AcceptCookie(page);
+
     });
 
     test('Verify search suggestions are displayed', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //click search icon
         await page.locator('#radix-_R_acl6ivb_-trigger-search').click();
@@ -27,14 +27,12 @@ test.describe('Search Smoke test cases', () => {
         // Verify content inside search dropdown 
         await expect(page.getByRole('textbox', { name: 'Hae mitä tahansa' })).toBeVisible();
         await expect(page.getByText('Suositut haut')).toBeVisible();
-        await expect(page.getByText('autoaartikkeliahenkilöä')).toBeVisible();  
+        await expect(page.getByText('autoaartikkeliahenkilöä')).toBeVisible();
 
 
     });
 
     test('Verify user can navigate to search result page', async ({ page }) => {
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         // Enter search results page
         await EnterSearchPage(page);
@@ -44,10 +42,8 @@ test.describe('Search Smoke test cases', () => {
         await expect(page.getByRole('button', { name: 'Luo hakuvahti' })).toBeVisible();
 
     });
-        
+
     test('Verify that Car cards, sorting and filtering options are visible on search result page', async ({ page }) => {
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         // Enter search results page
         await EnterSearchPage(page);
@@ -60,9 +56,6 @@ test.describe('Search Smoke test cases', () => {
 
     test('Verify that product counter is visible', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         // Enter search results page
         await EnterSearchPage(page);
 
@@ -73,10 +66,6 @@ test.describe('Search Smoke test cases', () => {
 
     test('Verify pagination of the category page', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
-
         // Enter search results page
         await EnterSearchPage(page);
 
@@ -85,64 +74,52 @@ test.describe('Search Smoke test cases', () => {
 
     });
 
-test('Verify that user can sort on category page', async ({ page }) => {
-
-    // Accept Cookies & Close Dialog popup
-    await AcceptCookie(page);
-
-    // Enter search results page
-    await EnterSearchPage(page);
-
-    //Sort by asc-price 
-    await ApplySorting(page);
-
-});
-
-test('Verify that user can filter on category page', async ({ page }) => {
-
-    // Accept Cookies & Close Dialog popup
-    await AcceptCookie(page);
-
-    // Enter search results page
-    await EnterSearchPage(page);
-
-    // Verify that user can filter by car brand
-    await ApplyFilter(page);
-
-
-});
-
-test('Verify that user can remove selected filters', async ({ page }) => {
-
-
-    // Accept Cookies & Close Dialog popup
-    await AcceptCookie(page);
-
-    // Enter search results page
-    await EnterSearchPage(page);
-
-    // Verify that user can filter by car brand
-    await ApplyFilter(page);
-
-
-    // Verify that user can remove selected filters
-    await RemoveFilter(page);
-
-    // Verify url
-    await expect(page).toHaveURL(/.*Tesla/);
-
-
-});
-
-    test('Verify that user can navigate to a car page from search result page', async ({ page }) => {
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
+    test('Verify that user can sort on category page', async ({ page }) => {
 
         // Enter search results page
         await EnterSearchPage(page);
 
-        //wait 2 sec
-        await page.waitForTimeout(2000);
+        //Sort by asc-price 
+        await ApplySorting(page);
+
+    });
+
+    test('Verify that user can filter on category page', async ({ page }) => {
+
+        // Enter search results page
+        await EnterSearchPage(page);
+
+        // Verify that user can filter by car brand
+        await ApplyFilter(page);
+
+
+    });
+
+    test('Verify that user can remove selected filters', async ({ page }) => {
+
+        // Enter search results page
+        await EnterSearchPage(page);
+
+        // Verify that user can filter by car brand
+        await ApplyFilter(page);
+
+
+        // Verify that user can remove selected filters
+        await RemoveFilter(page);
+
+        // Verify url
+        await expect(page).toHaveURL(/.*Tesla/);
+
+
+    });
+
+    test('Verify that user can navigate to a car page from search result page', async ({ page }) => {
+
+        // Enter search results page
+        await EnterSearchPage(page);
+
+        //wait 3 sec
+        await page.waitForTimeout(3000);
 
         //Enter PDP
         await EnterPDPSearch(page);
@@ -154,8 +131,6 @@ test('Verify that user can remove selected filters', async ({ page }) => {
     });
 
     test('Save search alert as guest will redirect user to login page', async ({ page }) => {
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         // Enter search results page
         await EnterSearchPage(page);
@@ -166,8 +141,6 @@ test('Verify that user can remove selected filters', async ({ page }) => {
     });
 
     test('Empty search page', async ({ page }) => {
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //click search icon
         await page.locator('#radix-_R_acl6ivb_-trigger-search').click();

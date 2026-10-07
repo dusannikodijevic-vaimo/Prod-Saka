@@ -10,13 +10,12 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('');
+        await page.goto('https://saka.fi/fi');
+
+        await AcceptCookie(page);
     });
 
     test('Verify that the car title is showing', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -32,9 +31,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that the car price is showing', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -48,9 +44,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify that color variants are showing', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -66,9 +59,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that breadcrumbs are showing & working', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -81,9 +71,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify that image and gallery of the cars is displayed', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Car category
         await EnterCarPLP(page);
@@ -99,9 +86,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that user can view image in full screen', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Car category
         await EnterCarPLP(page);
 
@@ -115,9 +99,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify that user can minimise image', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Car category
         await EnterCarPLP(page);
@@ -137,9 +118,6 @@ test.describe('PDP Smoke Test', () => {
         //Navigate to Car category with a condition report
         await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //click on the condition report accordion to expand it'
         await page.getByRole('tab', { name: 'Kuntoraportti' }).click();
 
@@ -158,9 +136,6 @@ test.describe('PDP Smoke Test', () => {
         //Navigate to Car category with a technical information
         await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //click on the technical information accordion to expand it'
         await expect(page.getByRole('tab', { name: 'Auton tiedot' })).toBeVisible();
         await (page.getByRole('tab', { name: 'Auton tiedot' })).click();
@@ -178,9 +153,6 @@ test.describe('PDP Smoke Test', () => {
         //Navigate to Car category with a basic information
         await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //click on the basic information accordion to expand it'
         await page.getByRole('tab', { name: 'Varusteet' }).click();
 
@@ -190,9 +162,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify Reservation button & Reservation page', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -206,9 +175,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify contact information button & form', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -224,9 +190,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify request video button & form', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -239,9 +202,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify Whatsapp message button & link', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -256,9 +216,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that phone button is visible', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -272,9 +229,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify that chat is showing on pdp', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -299,9 +253,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that reviews are showing on pdp', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -317,9 +268,6 @@ test.describe('PDP Smoke Test', () => {
 
 
     test('Verify that sales people are showing on pdp', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -340,9 +288,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that related cars are showing on pdp', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -358,9 +303,6 @@ test.describe('PDP Smoke Test', () => {
 
 
     test('Verify that financing calculator is visible & user is able to interact with it', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -387,9 +329,6 @@ test.describe('PDP Smoke Test', () => {
 
 
     test('Add product to compare list & Verify that it is there', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);

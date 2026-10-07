@@ -12,13 +12,13 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PLP Smoke test ', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('');
+        await page.goto('https://saka.fi/fi');
+
+        await AcceptCookie(page);
+
     });
 
     test('Verify that user can navigate from Homepage to Hybrid cars category', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -33,9 +33,6 @@ test.describe('PLP Smoke test ', () => {
 
     test('Verify that Car cards, sorting and filtering options are visible', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -47,9 +44,6 @@ test.describe('PLP Smoke test ', () => {
 
     test('Verify that product counter is visible', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -60,9 +54,6 @@ test.describe('PLP Smoke test ', () => {
 
     test('Save search alert as guest will redirect user to login page', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -72,9 +63,6 @@ test.describe('PLP Smoke test ', () => {
     });
 
     test('Verify breadcrumbs are visible and working', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -87,9 +75,6 @@ test.describe('PLP Smoke test ', () => {
 
     test('Verify pagination of the category page', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -101,9 +86,6 @@ test.describe('PLP Smoke test ', () => {
 
     test('Verify that user can sort on category page', async ({ page }) => {
 
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -113,9 +95,6 @@ test.describe('PLP Smoke test ', () => {
     });
 
     test('Verify that user can filter on category page', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -127,10 +106,6 @@ test.describe('PLP Smoke test ', () => {
     });
 
     test('Verify that user can remove selected filters', async ({ page }) => {
-
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -150,10 +125,7 @@ test.describe('PLP Smoke test ', () => {
     });
 
     test('Verify user is able to enter Product Page', async ({ page }) => {
-
-        // Accept Cookies & Close Dialog popup
-        await AcceptCookie(page);
-
+        
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
