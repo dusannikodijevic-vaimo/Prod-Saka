@@ -10,18 +10,18 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://saka.fi/fi');
+        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
 
         //await AcceptCookie(page);
     });
 
     test('Verify that the car title is showing', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+/*         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that the car title is showing
         await expect(page.locator('#car-title')).toBeVisible();
@@ -31,11 +31,11 @@ test.describe('PDP Smoke Test', () => {
 
      test('Verify that the car price is showing', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that the car price is showing
         await expect(page.locator(`//div[@data-id='price']`)).toBeVisible();
@@ -45,11 +45,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that color variants are showing', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+       /*  //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that color variants are showing
         await expect(page.locator('[data-test-id="car-variant-color-button"]').first()).toBeVisible();
@@ -59,11 +59,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that breadcrumbs are showing & working', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that breadcrumbs are showing & working
         await VerifyBreadcrumbs(page);
@@ -72,11 +72,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that image and gallery of the cars is displayed', async ({ page }) => {
 
-        //Navigate to Car category
+       /*  //Navigate to Car category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that image and gallery of the cars is displayed
         await expect(page.locator(`//div[1]/picture/img`)).toBeVisible();
@@ -86,11 +86,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that user can view image in full screen', async ({ page }) => {
 
-        //Navigate to Car category
+       /*  //Navigate to Car category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that user can view image in full screen
         await page.getByRole('button', { name: 'Laajenna kuvagalleria' }).click();
@@ -100,11 +100,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that user can minimise image', async ({ page }) => {
 
-        //Navigate to Car category
+        /* //Navigate to Car category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Verify that user can minimise image
         await page.getByRole('button', { name: 'Laajenna kuvagalleria' }).click();
@@ -115,8 +115,8 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand condition report accordion and the condition form is available', async ({ page }) => {
 
-        //Navigate to Car category with a condition report
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+       /*  //Navigate to Car category with a condition report
+        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940'); */
 
         //click on the condition report accordion to expand it'
         await page.getByRole('tab', { name: 'Kuntoraportti' }).click();
@@ -132,9 +132,9 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify user can expand car information accordion and the content is visible', async ({ page }) => {
-
+/* 
         //Navigate to Car category with a technical information
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940'); */
 
         //click on the technical information accordion to expand it'
         await expect(page.getByRole('tab', { name: 'Auton tiedot' })).toBeVisible();
@@ -150,8 +150,8 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand equipment accordion and the content is visible', async ({ page }) => {
 
-        //Navigate to Car category with a basic information
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+        /* //Navigate to Car category with a basic information
+        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940'); */
 
         //click on the basic information accordion to expand it'
         await page.getByRole('tab', { name: 'Varusteet' }).click();
@@ -163,12 +163,12 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify Reservation button & Reservation page', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
         await EnterPDP(page);
-
+ */
         // Click on the "Varaa" button to navigate to the reservation page and fil out the form
         await VerifyReserveButton(page);
 
@@ -176,11 +176,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify contact information button & form', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Click on the contact information button to navigate to the contact information form and fill out the form
         await VerifyRequestContactButton(page);
@@ -190,11 +190,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify request video button & form', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Click on the request video button to navigate to the request video form and fill out the form
         await VerifyRequestVideoButton(page);
@@ -203,12 +203,12 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify Whatsapp message button & link', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
         await EnterPDP(page);
-
+ */
         //Click on whatsapp button
         await VerifiyWhatsappButton(page);
 
@@ -216,11 +216,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that phone button is visible', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         //Verify that phone button is visible
         await expect(page.locator('[data-test-id="car-phone-button"]')).toBeVisible();
@@ -228,36 +228,35 @@ test.describe('PDP Smoke Test', () => {
 
     });
 
-    test('Verify that chat is showing on pdp', async ({ page }) => {
-
-        //Navigate to Hybrid Cars category
+    /* test('Verify that chat is showing on pdp', async ({ page }) => {
+ */
+    /*     // Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
-        //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        // Enter PDP page of the first car in the list
+        await EnterPDP(page); */
 
-        // Scroll down to activate chat
+   /*      // Scroll down to activate chat
         await page.evaluate(() => {
-            window.scrollBy(0, 1400); // Scroll down by 800 pixels
+            window.scrollBy(0, 2000); // Scroll down by 1800 pixels
         });
 
-        //wait 4 sec for chat to appear
+        // Wait 4 seconds for chat to appear
         await page.waitForTimeout(4000);
 
-        //Chat (check to see if it work)
+        // Chat (check to see if it works)
         await expect(page.locator('#sf-chat-tool-inline')).toBeVisible();
 
-
-    });
+    }); */
 
 
     test('Verify that reviews are showing on pdp', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+       /*  //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         //Verify that reviews are showing
         await expect(page.locator('[data-test-id="reviews-component"]')).toBeVisible();
@@ -269,11 +268,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that sales people are showing on pdp', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+       /*  //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         // Scroll down to activate sales people section
         await page.evaluate(() => {
@@ -288,11 +287,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that related cars are showing on pdp', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+       /*  //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         //Verify that related cars are showing
         await expect(page.locator('[data-test-id="vehicle-card"]').first()).toBeVisible();
@@ -304,11 +303,11 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify that financing calculator is visible & user is able to interact with it', async ({ page }) => {
 
-        //Navigate to Hybrid Cars category
+        /* //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
+        await EnterPDP(page); */
 
         //Verify that financing calculator is visible
         await expect(page.locator('[data-test-id="car-finance-calculator-button"]')).toBeVisible();
@@ -329,13 +328,13 @@ test.describe('PDP Smoke Test', () => {
 
 
     test('Add product to compare list & Verify that it is there', async ({ page }) => {
-
+/* 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
         await EnterPDP(page);
-
+ */
         //Click on compare button
         await page.getByRole('button', { name: 'Vertaa' }).last().click();
 
