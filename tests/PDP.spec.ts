@@ -12,7 +12,7 @@ test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('https://saka.fi/en');
 
-        await AcceptCookie(page);
+        //await AcceptCookie(page);
     });
 
     test('Verify that the car title is showing', async ({ page }) => {
