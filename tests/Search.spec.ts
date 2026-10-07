@@ -1,4 +1,4 @@
-/* import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { AcceptCookie } from '../Fixture/Cookie.fixture';
 import { VerifyPLP } from '../Fixture/Verify PLP.fixture';
 import { EnterPDPSearch } from '../Fixture/EnterPDPSearch.fixture';
@@ -15,7 +15,7 @@ test.describe('Search Smoke test cases', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('https://saka.fi/fi');
 
-        await AcceptCookie(page);
+        //await AcceptCookie(page);
 
     });
 
@@ -156,4 +156,3 @@ test.describe('Search Smoke test cases', () => {
 
     });
 });
- */
