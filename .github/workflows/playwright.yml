@@ -21,6 +21,8 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+    - name: Set up environment variables
+      run: echo "BASE_URL=https://saka.fi/fi" >> $GITHUB_ENV
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests

@@ -13,7 +13,7 @@ import { VerifyPDP } from '../Fixture/VerifyPDP.fixture';
 
 test.describe('Search Smoke test cases', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('');
+        await page.goto('https://saka.fi/fi');
     });
 
     test('Verify search suggestions are displayed', async ({ page }) => {
