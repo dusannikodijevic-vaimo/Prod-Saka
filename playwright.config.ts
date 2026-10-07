@@ -29,10 +29,10 @@ export default defineConfig({
     baseURL: 'https://saka.fi/fi',
 
     // Add real User-Agent and headers to bypass simple bot checks
-    //userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-    //extraHTTPHeaders: {
-      //'Accept-Language': 'fi-FI,fi;q=0.9,en-US;q=0.8,en;q=0.7',
-    //},
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    extraHTTPHeaders: {
+      'Accept-Language': 'fi-FI,fi;q=0.9,en-US;q=0.8,en;q=0.7',
+    },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     screenshot: 'on-first-failure',
