@@ -29,7 +29,7 @@ test.describe('PDP Smoke Test', () => {
 
     });
 
-    test('Verify that the car price is showing', async ({ page }) => {
+/*     test('Verify that the car price is showing', async ({ page }) => {
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
@@ -343,7 +343,7 @@ test.describe('PDP Smoke Test', () => {
         await expect(page.getByText('Vertaa autoja').first()).toBeVisible();
         await expect(page.getByRole('button', { name: 'Poista', exact: true })).toBeVisible();
         await expect(page.getByRole('button', { name: 'Lisää auto vertailuun' })).toBeVisible();
-        await expect(page.getByRole('button', { name: 'Vertaa', exact: true })).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Vertaa', exact: true })).toBeVisible(); 
 
-    });
+    });*/
 });

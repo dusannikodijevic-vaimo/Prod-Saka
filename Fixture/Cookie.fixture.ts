@@ -5,6 +5,6 @@ export async function AcceptCookie(
 ): Promise<void> {
         
     // Accept cookie consent
-    await page.getByRole('button', { name: 'Salli kaikki' }).click();
+    await page.getByRole('button', { name: 'Allow all' }).click();
 }
 
