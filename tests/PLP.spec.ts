@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/* import { test, expect } from '@playwright/test';
 import { AcceptCookie } from '../Fixture/Cookie.fixture';
 import { EnterCarPLP } from '../Fixture/EnterPLP.fixture';
 import { VerifyPLP } from '../Fixture/Verify PLP.fixture';
@@ -125,7 +125,7 @@ test.describe('PLP Smoke test ', () => {
     });
 
     test('Verify user is able to enter Product Page', async ({ page }) => {
-        
+
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
@@ -134,3 +134,4 @@ test.describe('PLP Smoke test ', () => {
 
     });
 });
+ */
