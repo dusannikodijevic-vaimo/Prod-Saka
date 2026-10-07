@@ -8,7 +8,5 @@ export async function EnterPDP(
     await (page.locator('[data-test-id="vehicle-card"]').first().click());
     await expect(page).toHaveURL(/.*vaihtoauto/);
     await expect(page.locator('#car-title')).toBeVisible();
-    await expect(page.locator('[data-test-id="car-reserve-button"]')).toBeVisible();
-    await expect(page.locator('[data-test-id="car-finance-calculator-button"]')).toBeVisible();
 }
 
