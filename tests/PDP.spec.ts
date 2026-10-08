@@ -229,14 +229,14 @@ test.describe('PDP Smoke Test', () => {
     });
 
     /* test('Verify that chat is showing on pdp', async ({ page }) => {
- */
-    /*     // Navigate to Hybrid Cars category
+ 
+         // Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         // Enter PDP page of the first car in the list
-        await EnterPDP(page); */
+        await EnterPDP(page); 
 
-   /*      // Scroll down to activate chat
+         // Scroll down to activate chat
         await page.evaluate(() => {
             window.scrollBy(0, 2000); // Scroll down by 1800 pixels
         });
