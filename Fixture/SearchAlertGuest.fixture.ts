@@ -13,6 +13,6 @@ export async function SearchAlertGuest(
     // Verify that the login page is displayed
     await expect(page.getByText('DEVKirjaudu sisäänKirjaudu')).toBeVisible();
     await expect(page).toHaveURL(/.*msg=search-alert/);
-    await expect(page.getByText('Kirjaudu sisään ja jatka siit')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Kirjaudu sisään' })).toBeVisible();
 }
 
