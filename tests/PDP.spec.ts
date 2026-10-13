@@ -260,7 +260,7 @@ test.describe('PDP Smoke Test', () => {
 
         //Verify that reviews are showing
         await expect(page.locator('[data-test-id="reviews-component"]')).toBeVisible();
-        await expect(page.locator('[data-test-id="reviews-component"]').getByText('01')).toBeVisible();
+        await expect(page.locator('[data-test-id="reviews-component"]').getByText('01').nth(-1)).toBeVisible();
 
 
     });
