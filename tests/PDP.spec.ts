@@ -10,7 +10,7 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-m5-392189');
+        await page.goto('https://saka.fi/fi/vaihtoauto/mercedes-benz-gle-53-amg-391799');
 
         //await AcceptCookie(page);
     });
@@ -115,9 +115,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand condition report accordion and the condition form is available', async ({ page }) => {
 
-       /*  //Navigate to Car category with a condition report
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940'); */
-
         //click on the condition report accordion to expand it'
         await page.getByRole('tab', { name: 'Kuntoraportti' }).click();
 
@@ -132,9 +129,6 @@ test.describe('PDP Smoke Test', () => {
     });
 
     test('Verify user can expand car information accordion and the content is visible', async ({ page }) => {
-/* 
-        //Navigate to Car category with a technical information
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940'); */
 
         //click on the technical information accordion to expand it'
         await expect(page.getByRole('tab', { name: 'Auton tiedot' })).toBeVisible();
@@ -150,9 +144,6 @@ test.describe('PDP Smoke Test', () => {
 
     test('Verify user can expand equipment accordion and the content is visible', async ({ page }) => {
 
-        /* //Navigate to Car category with a basic information
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940'); */
-
         //click on the basic information accordion to expand it'
         await page.getByRole('tab', { name: 'Varusteet' }).click();
 
@@ -167,8 +158,8 @@ test.describe('PDP Smoke Test', () => {
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page);
- */
+        await EnterPDP(page);*/
+
         // Click on the "Varaa" button to navigate to the reservation page and fil out the form
         await VerifyReserveButton(page);
 
@@ -247,24 +238,24 @@ test.describe('PDP Smoke Test', () => {
         // Chat (check to see if it works)
         await expect(page.locator('#sf-chat-tool-inline')).toBeVisible();
 
-    }); */
+    });
 
 
-/*    test('Verify that reviews are showing on pdp', async ({ page }) => { // NOT SHOWING ON PDP ANYMORE
+    test('Verify that reviews are showing on pdp', async ({ page }) => {
 
         //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page); 
+        await EnterPDP(page);
 
         //Verify that reviews are showing
         await expect(page.locator('[data-test-id="reviews-component"]')).toBeVisible();
-        await expect(page.locator('[data-test-id="reviews-component"]').getByText('01').nth(-1)).toBeVisible(); */
+        await expect(page.locator('[data-test-id="reviews-component"]').getByText('01').nth(-1)).toBeVisible();
 
 
-    });
-
+});
+*/
 
     test('Verify that sales people are showing on pdp', async ({ page }) => {
 
@@ -344,4 +335,5 @@ test.describe('PDP Smoke Test', () => {
         await expect(page.getByRole('button', { name: 'Lisää auto vertailuun' })).toBeVisible();
         await expect(page.getByRole('button', { name: 'Vertaa', exact: true })).toBeVisible(); 
 
+    });
 });
