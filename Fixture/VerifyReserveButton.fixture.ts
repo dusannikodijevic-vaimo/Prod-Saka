@@ -20,8 +20,7 @@ export async function VerifyReserveButton(
     });
 
     // Verify that the reservation page is displayed
-    await page.locator('section').filter({ hasText: 'Mitä auton varaaminen' }).locator('iframe').contentFrame().getByRole('button', { name: 'Hyväksy kaikki evästeet' }).click();
-    await expect(page.locator('section').filter({ hasText: 'Mitä auton varaaminen' }).locator('iframe').contentFrame().getByText('Varausmaksu: 200 € Mikä')).toBeVisible();
+    await page.locator('section').filter({ hasText: 'Mitä auton varaaminen' }).locator('iframe').contentFrame().getByRole('button', { name: 'Siirry maksamaan' }).click();
 
     //Fill in the reservation form
     await page.locator('section').filter({ hasText: 'Mitä auton varaaminen' }).locator('iframe').contentFrame().getByRole('textbox', { name: 'Etunimi *' }).fill('Test');

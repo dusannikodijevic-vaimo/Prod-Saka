@@ -10,7 +10,7 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-ix-389940');
+        await page.goto('https://saka.fi/fi/vaihtoauto/bmw-m5-392189');
 
         //await AcceptCookie(page);
     });
@@ -250,17 +250,17 @@ test.describe('PDP Smoke Test', () => {
     }); */
 
 
-    test('Verify that reviews are showing on pdp', async ({ page }) => {
+/*    test('Verify that reviews are showing on pdp', async ({ page }) => { // NOT SHOWING ON PDP ANYMORE
 
-       /*  //Navigate to Hybrid Cars category
+        //Navigate to Hybrid Cars category
         await EnterCarPLP(page);
 
         //Enter PDP page of the first car in the list
-        await EnterPDP(page); */
+        await EnterPDP(page); 
 
         //Verify that reviews are showing
         await expect(page.locator('[data-test-id="reviews-component"]')).toBeVisible();
-        await expect(page.locator('[data-test-id="reviews-component"]').getByText('01').nth(-1)).toBeVisible();
+        await expect(page.locator('[data-test-id="reviews-component"]').getByText('01').nth(-1)).toBeVisible(); */
 
 
     });
@@ -344,5 +344,4 @@ test.describe('PDP Smoke Test', () => {
         await expect(page.getByRole('button', { name: 'Lisää auto vertailuun' })).toBeVisible();
         await expect(page.getByRole('button', { name: 'Vertaa', exact: true })).toBeVisible(); 
 
-    });
 });
