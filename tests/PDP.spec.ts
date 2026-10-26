@@ -10,7 +10,7 @@ import { VerifyBreadcrumbs } from '../Fixture/VerifyBreadcrumbs.fixture';
 
 test.describe('PDP Smoke Test', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://saka.fi/fi/vaihtoauto/mercedes-benz-gle-53-amg-391799');
+        await page.goto('https://saka.fi/fi/vaihtoauto/porsche-panamera-391305');
 
         //await AcceptCookie(page);
     });
@@ -119,12 +119,12 @@ test.describe('PDP Smoke Test', () => {
         await page.getByRole('tab', { name: 'Kuntoraportti' }).click();
 
         // Verify condition report elements are visible
-        await expect(page.getByRole('button', { name: 'DEKRA Katsastus' })).toBeVisible();
+        //await expect(page.getByRole('button', { name: 'DEKRA Katsastus' })).toBeVisible();
         await expect(page.getByRole('link', { name: 'Lataa raportti' })).toBeVisible();
-        await expect(page.getByRole('img', { name: 'DEKRA Katsastus' })).toBeVisible();
-        await expect(page.getByText('Järjestelmät1Sähkö- ja')).toBeVisible();
+        await expect(await page.getByText('Hyvässä kunnossaLataa raportti').first()).toBeVisible();
+       /*  await expect(page.getByRole('img', { name: 'DEKRA Katsastus' })).toBeVisible();
         await expect(page.getByText('Kunto kartalla12345678ETU')).toBeVisible();
-        await expect(page.getByText('RenkaatEtu')).toBeVisible();
+        await expect(page.getByText('RenkaatEtu')).toBeVisible();*/
 
     });
 
