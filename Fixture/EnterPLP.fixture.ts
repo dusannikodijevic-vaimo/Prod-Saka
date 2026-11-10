@@ -5,7 +5,7 @@ export async function EnterCarPLP(
 ): Promise<void> {
 
     //Close black month banner / To be removed once the banner is removed from the site
-    await page.getByRole('button', { name: 'Sulje' }).click();
+    //await page.getByRole('button', { name: 'Sulje' }).click();
 
     //Navigate to Hybrid Cars category
     await page.getByRole('button', { name: 'Vaihtoautot' }).first().hover();
