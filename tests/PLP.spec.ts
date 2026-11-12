@@ -48,7 +48,7 @@ test.describe('PLP Smoke test ', () => {
         await EnterCarPLP(page);
 
         // Verify that search result counter is visible
-        await expect(page.getByText('Löytyy')).toBeVisible();
+        await expect(page.locator('text=Löytyy').nth(0)).toBeVisible();
 
     });
 
